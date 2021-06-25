@@ -1,0 +1,50 @@
+
+
+.msg {
+border-radius: 20px;
+margin-top: 20px;
+bottom: 20px;
+padding: 5px;
+max-width: 1000px;
+}
+
+body {
+  margin: auto;
+}
+
+header, main, footer {
+  padding-left: 300px;
+}
+
+.poster {
+  border: solid black 1px;
+  padding: 10px;
+  background-color: grey;
+  margin: 5px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+    margin: 0px;
+    max-height: auto;
+  }
+}
+
+.container {
+  border: 1px double transparent;
+  box-shadow: 2px 2px 20px black;
+}
+
+.img {
+  max-width: 70px;
+  float: left;
+}
+
+.user {
+justify-content: space-around;  
+}
+
+.timeStamp {
+  box-sizing: content-box;
+}
