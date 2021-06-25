@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- not linked yet -->
-  <link rel="stylesheet" href="./assets/styling/style.css" />
+  <link rel="stylesheet" href="../../public/css/style.css" />
   <title>Forum Friends</title>
 
   <!--Let browser know website is optimized for mobile-->
@@ -16,15 +16,12 @@
 </head>
 <!-- Nav/Home -->
 
-<body id="home">
-  <div class="navbar-fixed">
+<body id="home" class="bg-black">
+  <div class="navbar-wrapper">
     <nav class="black">
       <div class="container">
         <div class="nav-wrapper">
           <a href="#" class="brand-logo">Forum Friends</a>
-          <a href="#" data-target="mobile-nav" class="sidenav-trigger">
-            <i class="material-icons btn-floating white center-align pulse black-text ">menu</i>
-          </a>
           <ul class="right hide-on-med-and-down">
             <li>
               <a href="#home">Home</a>
@@ -42,17 +39,19 @@
   </div>
   <div class="container center">
     {{ body }}
-  </div>
+    <section class="section blue darken-2 white-text center-align">
+      <p class="flow-text">Forum Friends &copy; 2021</p>
+      <p>Made with materializeCSS</p>
+      <a class="link" href="https://github.com/huirayj/forum-friends">GitHub</a>
+    </section>
 </body>
-  <footer class="section blue darken-2 white-text center-align">
-<p class="flow-text">Forum Friends &copy; 2021</p>
-<p>Made with materializeCSS</p>
-<a class="link" href="https://github.com/huirayj/forum-friends">GitHub</a>
-</footer>
+<!-- footer -->
 
-  <!--JavaScript at end of body for optimized loading-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <!-- Not linked -->
-  <script src="./assets/javascript/script.js"></script>
+<!--JavaScript at end of body for optimized loading-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Not linked -->
+<script src="./assets/javascript/script.js"></script>
+</div>
 </body>
+
 </html>
