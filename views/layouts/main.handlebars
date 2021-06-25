@@ -37,8 +37,32 @@
       </div>
     </nav>
   </div>
+
   <div class="container center">
-    {{ body }}
+    {{!-- only show if user is logged in --}}
+    {{#if loggedIn}}
+    <div class="container">
+      <div class="center">
+        <form class="col s12 m1">
+          <!-- send button -->
+          <!-- Message input -->
+          <div class="input-field col s6 poster">
+            <i class="material-icons prefix">mode_edit</i>
+            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+            <button class="btn red waves-effect waves-light" type="submit" name="send">post
+              <i class="material-icons right">send</i>
+            </button>
+            <label for="icon_prefix2">Message</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    {{> messages}}
+    {{#else}}
+    {{> login}}
+    {{/else}}
+    {{/if}}
+
     <section class="section blue darken-2 white-text center-align">
       <p class="flow-text">Forum Friends &copy; 2021</p>
       <p>Made with materializeCSS</p>
