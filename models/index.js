@@ -14,7 +14,7 @@ Post.belongsTo(User, {
 
 // user-comment relationship
 User.hasMany(Comment, {
-    foreignKey: user_id,
+    foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
