@@ -1,30 +1,15 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-    res.render('login');
-});
-
-router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-    res.render('signup');
-});
-
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const allPostData = await Post.findAll({
+            where: { user_id: req.session.user_id },
             attributes: ['id', 'title', 'content', 'created_at'],
-            include: [
-                {
+            include: [{
                 model: Comment,
-                attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'content', 'created_at', 'post_id', 'user_id'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -33,27 +18,25 @@ router.get('/', async (req, res) => {
             {
                 model: User,
                 attributes: ['username']
-            }
-        ]
+            }]
         }).map(post => post.get({ plain: true }));
 
-        res.status(200).render('homepage', {
+        res.status(200).render('dashboard', {
             allPostData,
-            loggedIn: req.session.loggedIn
+            loggedIn: true
         });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-
-router.get('/post/:id', async (req, res) => {
+router.get('/edit/:id', withAuth, async (req, res) => {
     try {
         const aPostData = await Post.findByPk(req.params.id, {
             attributes: ['id', 'title', 'content', 'created_at'],
             include: [{
                 model: Comment,
-                attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'content', 'created_at', 'post_id', 'user_id'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -64,15 +47,15 @@ router.get('/post/:id', async (req, res) => {
                 attributes: ['username']
             }]
         });
-    
+
         if (!aPostData) {
             res.status(404).json({ message: 'No post found with that id' });
         } else {
             const post = aPostData.get({ plain: true });
-    
-            res.status(200).render('single-post', {
+
+            res.render('edit-post', {
                 post,
-                loggedIn: req.session.loggedIn
+                loggedIn: true
             });
         }
     } catch (err) {
