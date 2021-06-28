@@ -6,7 +6,7 @@ router.get('/login', (req, res) => {
         res.redirect('/');
         return;
     }
-    res.render('login');
+    res.render('homepage');
 });
 
 router.get('/signup', (req, res) => {
@@ -38,7 +38,7 @@ router.get('/', async (req, res) => {
         })
         const posts = allPostData.map(post => post.get({ plain: true }));
 
-        res.render('homepage', {
+        res.render('login', {
             posts,
             loggedIn: req.session.loggedIn
         });
