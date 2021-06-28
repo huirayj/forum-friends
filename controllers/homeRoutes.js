@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 
-router.get('/login', (req, res) => {
+router.get('/post', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
-    res.render('homepage');
+    res.render('post');
 });
 
 router.get('/signup', (req, res) => {
