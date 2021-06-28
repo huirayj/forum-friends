@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+<<<<<<< HEAD
 router.get('/', withAuth, async (req, res) => {
     try {
         const allPostData = await Post.findAll({
@@ -48,6 +49,54 @@ router.get('/edit/:id', withAuth, async (req, res) => {
                 attributes: ['username']
             }]
         });
+=======
+// router.get('/', withAuth, async (req, res) => {
+//     try {
+//         const allPostData = await Post.findAll({
+//             where: { user_id: req.session.user_id },
+//             attributes: ['id', 'title', 'content', 'created_at'],
+//             include: [{
+//                 model: Comment,
+//                 attributes: ['id', 'content', 'created_at', 'post_id', 'user_id'],
+//                 include: {
+//                     model: User,
+//                     attributes: ['username']
+//                 }
+//             },
+//             {
+//                 model: User,
+//                 attributes: ['username']
+//             }]
+//         })
+//         const posts = allPostData.map(post => post.get({ plain: true }));
+
+//         res.status(200).render('dashboard', {
+//             posts,
+//             loggedIn: true
+//         });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
+
+// router.get('/edit/:id', withAuth, async (req, res) => {
+//     try {
+//         const aPostData = await Post.findByPk(req.params.id, {
+//             attributes: ['id', 'title', 'content', 'created_at'],
+//             include: [{
+//                 model: Comment,
+//                 attributes: ['id', 'content', 'created_at', 'post_id', 'user_id'],
+//                 include: {
+//                     model: User,
+//                     attributes: ['username']
+//                 }
+//             },
+//             {
+//                 model: User,
+//                 attributes: ['username']
+//             }]
+//         });
+>>>>>>> a3b2a08 (staged for heroku)
 
         if (!aPostData) {
             res.status(404).json({ message: 'No post found with that id' });

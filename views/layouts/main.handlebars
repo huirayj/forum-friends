@@ -14,7 +14,7 @@
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-<!-- Nav/Home -->
+<!-- Nav/wrappers -->
 
 <body id="home" class="bg-black">
   <div id="page-container">
@@ -42,6 +42,8 @@
       </div>
     </nav>
   </div>
+  <!-- sticky nav bar -->
+
 <!-- side nav -->
   <ul class="sidenav" id="mobile-nav">
     <li>
@@ -54,30 +56,9 @@
       <a href="#forum">Forum</a>
     </li>
   </ul>
-
-    {{#if loggedIn}}
-    <div class="container post">
-      <div class="center">
-        <form class="col s12 m1">
-          <!-- send button -->
-          <!-- Message input -->
-          <div class="input-field col s6 center" id="custom-input">
-            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-            <button class="btn red waves-effect waves-light" type="submit" name="send">post
-              <i class="material-icons right">send</i>
-            </button>
-            <label for="icon_prefix2">Message</label>
-          </div>
-        </form>
-      </div>
-    </div>
-    {{> messages}}
-
-    {{#else}}
-    {{> login}}
-    {{/else}}
-    {{/if}}
+  <!-- side nav -->
 {{{ body }}}
+<!-- footer -->
   </div>
   <footer id="footer">
   <footer class="white-text center border">
@@ -94,6 +75,5 @@
 <!-- linked to main -->
 <script src="../../public/js/main.js"></script>
 </div>
-</body>
 
 </html>
