@@ -2,30 +2,30 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// router.get('/', async (req, res) => {
-//     try {
-//         const allPostData = await Post.findAll({
-//             attributes: ['id', 'title', 'post_content', 'created_at'],
-//             order: [['created_at', 'DESC']],
-//             include: [
-//                 {
-//                     model: Comment,
-//                     attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
-//                     include: {
-//                         model: User,
-//                         attributes: ['username']
-//                     }
-//                 },
-//                 {
-//                     model: User,
-//                     attributes: ['username']
-//                 }]
-//         });
-//         res.status(200).json(allPostData);
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
+router.get('/', async (req, res) => {
+    try {
+        const allPostData = await Post.findAll({
+            attributes: ['id', 'title', 'content', 'created_at'],
+            order: [['created_at', 'DESC']],
+            include: [
+                {
+                    model: Comment,
+                    attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
+                },
+                {
+                    model: User,
+                    attributes: ['username']
+                }]
+        });
+        res.status(200).json(allPostData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 // router.get('/:id', async (req, res) => {
 //     try {
