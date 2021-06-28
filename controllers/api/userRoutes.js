@@ -40,11 +40,13 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+    console.log(req.body)
     const newUserData = await User.create({
         username: req.body.username,
         email: req.body.email,
         password: req.body.password
     });
+    console.log(newUserData)
 
     req.session.save(() => {
         req.session.user_id = newUserData.id;
