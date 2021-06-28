@@ -16,4 +16,8 @@ const userData = [
         email: 'user3@gmail.com',
         password: 'password123'
     }
-]
+];
+
+const seedUsers = () => User.bulkCreate(userData);
+
+module.exports = seedUsers;
