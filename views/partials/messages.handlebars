@@ -1,19 +1,18 @@
 <!--  message + username-->
 <div class="container msg center">
-        <img class="img" src="/assets/user-icon-placeholder.png"> </img>
+        <img class="img" src="../../assets/user-icon-placeholder.png"> </img>
         <p class="timeStamp grey-text">
-          {{ timeStamp }}
-          1:08pm 6/25/2021
+          {{!-- please check when formatted on the page--}}
+          {{ format_time Post.created_at }}
         </p>
         <p class="user left-align">
           {{ username }}
           Username:
         </p>
         <p>
-          {{ content }}
+          {{ text }}
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, iure amet impedit ea non aperiam expedita
           voluptatum laboriosam labore nostrum autem sint molestiae similique, molestias quod aliquid. Nisi, itaque
           labore.
         </p>
       </div>
-      
