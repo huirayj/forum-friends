@@ -35,10 +35,11 @@ router.get('/', async (req, res) => {
                 attributes: ['username']
             }
         ]
-        }).map(post => post.get({ plain: true }));
+        })
+        const posts = allPostData.map(post => post.get({ plain: true }));
 
-        res.status(200).render('homepage', {
-            allPostData,
+        res.render('homepage', {
+            posts,
             loggedIn: req.session.loggedIn
         });
     } catch (err) {
@@ -70,7 +71,7 @@ router.get('/post/:id', async (req, res) => {
         } else {
             const post = aPostData.get({ plain: true });
     
-            res.status(200).render('single-post', {
+            res.render('single-post', {
                 post,
                 loggedIn: req.session.loggedIn
             });

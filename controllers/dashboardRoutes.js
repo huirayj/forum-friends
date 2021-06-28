@@ -19,10 +19,11 @@ router.get('/', withAuth, async (req, res) => {
                 model: User,
                 attributes: ['username']
             }]
-        }).map(post => post.get({ plain: true }));
+        })
+        const posts = allPostData.map(post => post.get({ plain: true }));
 
         res.status(200).render('dashboard', {
-            allPostData,
+            posts,
             loggedIn: true
         });
     } catch (err) {

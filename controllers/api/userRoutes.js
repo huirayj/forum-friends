@@ -103,7 +103,7 @@ router.put('/:id', withAuth, async (req, res) => {
 
         (!aUserData[0]) ?
             res.status(404).json({ message: 'No user found with that id' }) :
-            res.status(200).json(aUserData);
+            res.status(200).json(updUserData);
     } catch (err) {
         res.status(500).json(err);
     }
