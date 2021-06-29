@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/postingStyle.css"/>
+<link rel="stylesheet" href="/css/postingStyle.css" />
 <div class="container post">
   <div class="center">
     <form class="col s12 m1">
@@ -14,15 +14,19 @@
     </form>
   </div>
 </div>
-{{#if posts}}
 
 {{#each posts as |post|}}
-{{> post-info post}}
-{{/each}}
 
-{{else}}
 <div class="container msg center">
-        <p class="timeStamp grey-text">
-         No posts yet
-        </p>
-{{/if}}
+  <img class="img" src="https://palmbayprep.org/wp-content/uploads/2015/09/user-icon-placeholder.png"> </img>
+  <p class="timeStamp grey-text">
+    {{ format_time post.createdAt }}
+  </p>
+  <p class="user left-align">
+    {{ post.title }}
+  </p>
+  <p>
+    {{ post.content }}
+  </p>
+</div>
+{{/each}}
