@@ -40,13 +40,13 @@
       <!-- sticky nav bar -->
 
       <!-- side nav -->
-      {{#if loggedIn}}
+      {{#unless loggedIn}}
       <ul class="sidenav" id="mobile-nav">
         <li>
           <a id="logout">Logout</a>
         </li>
       </ul>
-      {{/if}}
+      {{/unless}}
       <!-- side nav -->
       {{{ body }}}
       <!-- footer -->
