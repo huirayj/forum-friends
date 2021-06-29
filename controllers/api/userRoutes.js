@@ -39,30 +39,32 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+// router.post('/', async (req, res) => {
+//     console.log(req.body)
+//     const newUserData = await User.create({
+//         username: req.body.username,
+//         email: req.body.email,
+//         password: req.body.password
+//     });
+//     console.log(newUserData)
+
+//     req.session.save(() => {
+//         req.session.user_id = newUserData.id;
+//         req.session.username = newUserData.username;
+//         req.session.loggedIn = true;
+
+//         res.status(200).json(newUserData);
+//     });
+// });
+
 router.post('/', async (req, res) => {
-    console.log(req.body)
-    const newUserData = await User.create({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password
-    });
-    console.log(newUserData)
-
-    req.session.save(() => {
-        req.session.user_id = newUserData.id;
-        req.session.username = newUserData.username;
-        req.session.loggedIn = true;
-
-        res.status(200).json(newUserData);
-    });
-});
-
-router.post('/login', async (req, res) => {
     try {
         const aUserData = await User.findOne({
             where: { email: req.body.email }
         });
+
         const validPassword = aUserData.checkPassword(req.body.password);
+        console.log(validPassword);
 
         if (!aUserData) {
             res.status(400).json({ message: 'No user with that email' });
@@ -96,14 +98,13 @@ router.post('/logout', (req, res) => {
     }
 });
 
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         const updUserData = await User.update(req.body, {
-            individualHooks: true,
             where: { id: req.params.id }
         });
 
-        (!aUserData[0]) ?
+        (!updUserData[0]) ?
             res.status(404).json({ message: 'No user found with that id' }) :
             res.status(200).json(updUserData);
     } catch (err) {
