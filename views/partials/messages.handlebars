@@ -3,10 +3,10 @@
         <img class="img" src="../../assets/user-icon-placeholder.png"> </img>
         <p class="timeStamp grey-text">
           {{!-- please check when formatted on the page--}}
-          {{ createdAt }}
+          {{ format_time Post.created_at }}
         </p>
         <p class="user left-align">
-          {{ @root.post.username }}
+          {{ username }}
           Username:
         </p>
         <p>

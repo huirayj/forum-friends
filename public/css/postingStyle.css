@@ -1,3 +1,5 @@
+
+
 .msg {
   border-radius: 20px;
   margin-top: 20px;
@@ -61,8 +63,18 @@ main {
 
 .posts{
   overflow-y: scroll;
-  height: 550px;
-  margin-top: 50px;
+  margin-top: 0px;
+  max-height: 800px;
+  margin-top: 20px;
+}
+
+::-webkit-scrollbar {
+  width:16px;border-left:5px solid rgba(68, 68, 68, 0.411)
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:black;
+  border-radius: 20px;
 }
 
 #content-wrap {
