@@ -3,6 +3,7 @@ const { User, Post, Comment } = require('../models');
 
 router.get('/posts', async (req, res) => {
     const postData = await Post.findAll({
+        order: [['created_at', 'DESC']],
         include: [{
             model: User,
             attributes: ['username']

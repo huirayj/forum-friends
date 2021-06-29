@@ -40,13 +40,11 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/signup', async (req, res) => {
-    console.log(req.body)
     const newUserData = await User.create({
         username: req.body.username,
         email: req.body.email,
         password: req.body.password
     });
-    console.log(newUserData)
 
     req.session.save(() => {
         req.session.user_id = newUserData.id;
@@ -64,7 +62,6 @@ router.post('/', async (req, res) => {
         });
 
         const validPassword = aUserData.checkPassword(req.body.password);
-        console.log(validPassword);
 
         if (!aUserData) {
             res.status(400).json({ message: 'No user with that email' });
