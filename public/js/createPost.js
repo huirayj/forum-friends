@@ -21,5 +21,4 @@ const newFormHandler = async (e) => {
       alert(res.statusText);
     }
   }
-  
   document.querySelector('.new-msg-form').addEventListener('submit', newFormHandler);

@@ -60,7 +60,7 @@ main {
 
 .posts{
   overflow-y: scroll;
-  max-height: 870px;
+  max-height: 800px;
   margin-top: 5px;
 }
 
@@ -105,3 +105,13 @@ main {
    min-height: 60px !important;
    min-width: 100px !important;
  }
+
+.comments {
+  max-width: 400px;
+  background-color: black;
+  margin-top: 2px;
+}
+
+.new-comment-form {
+  min-height: 1px !important;
+}
