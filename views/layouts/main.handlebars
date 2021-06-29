@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <!--Let browser know website is optimized for mobile-->
+  <!--Lets browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,14 +24,14 @@
           <div class="container">
             <div class="nav-wrapper">
               <a href="#" class="brand-logo">Forum Friends</a>
-              <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+              <a data-target="mobile-nav" class="sidenav-trigger">
                 <i class="material-icons btn-floating white center-align pulse black-text ">menu</i>
                 <ul class="right hide-on-med-and-down">
-                  {{#if loggedIn}}
+                  {{#unless loggedIn}}
                   <li>
-                    <a id="logout">Logout</a>
+                    <a href="/" id="logout">Logout</a>
                   </li>
-                  {{/if}}
+                  {{/unless}}
                 </ul>
             </div>
           </div>
