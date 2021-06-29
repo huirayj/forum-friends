@@ -119,3 +119,7 @@ main {
 .new-comment-form {
   min-height: 1px !important;
 }
+
+html {
+  color: white;
+}
