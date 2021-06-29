@@ -1,7 +1,14 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 
+// const getCurrentUser = async (id) => {
+//     const userData = await User.findByPk(id);
+//     const user = userData.get({ plain: true });
+//     return user;
+// }
+
 router.get('/posts', async (req, res) => {
+    // const user = await getCurrentUser(req,session.user_id);
     const postData = await Post.findAll({
         order: [['created_at', 'DESC']],
         include: [{
