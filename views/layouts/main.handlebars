@@ -23,14 +23,22 @@
         <nav class="black">
           <div class="container">
             <div class="nav-wrapper">
-              <a href="#" class="brand-logo">Forum Friends</a>
+              <a href="/" class="brand-logo">Forum Friends</a>
               <a data-target="mobile-nav" class="sidenav-trigger">
                 <i class="material-icons btn-floating white center-align pulse black-text ">menu</i>
                 <ul class="right hide-on-med-and-down">
                   {{#unless loggedIn}}
-                  <li>
-                    <a href="/" id="logout">Logout</a>
-                  </li>
+                  <ul class="right hide-on-med-and-down">
+                    <li>
+                      <a>Welcome: {{ user.username }}</a>
+                    </li>
+                    <li>
+                      <a href="/" id="logout">Logout</a>
+                    </li>
+                    <li>
+                      <a href="/dashboard" id="dashboard">Dashboard</a>
+                    </li>
+                  </ul>
                   {{/unless}}
                 </ul>
             </div>
@@ -43,7 +51,10 @@
       {{#unless loggedIn}}
       <ul class="sidenav" id="mobile-nav">
         <li>
-          <a id="logout">Logout</a>
+          <a>Welcome: {{ user.username }}</a>
+        </li>
+        <li>
+          <a href="/" id="logout">Logout</a>
         </li>
       </ul>
       {{/unless}}
