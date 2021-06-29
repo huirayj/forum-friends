@@ -1,3 +1,4 @@
+
 body{
   justify-content: center;
   align-items: center;
@@ -19,6 +20,8 @@ input, button{
   background:white;
   box-shadow: 0 10px 20px black ;
   margin: 25px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form{
@@ -94,10 +97,6 @@ button{
   font-weight: 600;
   color: #0c0101;
   cursor: pointer;
-}
-
-.forgot-pass:hover{
-  color: red;
 }
 
 
@@ -282,3 +281,6 @@ button{
           transform:translate3d(0, 0, 0);
 }
 
+.hide-main {
+  display: none;
+}
