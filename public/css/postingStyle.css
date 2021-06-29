@@ -59,6 +59,11 @@ main {
   zoom: 1.0 ;
 }
 
+.posts{
+  overflow-y: scroll;
+  height: 550px;
+  margin-top: 50px;
+}
 
 #content-wrap {
   padding-bottom: 2.5rem;    /* Footer height */
