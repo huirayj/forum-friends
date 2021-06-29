@@ -93,4 +93,14 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
+router.get('/posts', async (req, res) => {
+    try {
+        const allCommentData = await Comment.findAll({});
+        
+        res.status(200).json(allCommentData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
