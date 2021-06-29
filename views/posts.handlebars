@@ -14,9 +14,12 @@
     </form>
   </div>
 </div>
-{{#if posts.length}}
-{{#each posts as |post|}}
 
+<div class="container posts center">
+
+{{#if posts.length}}
+
+{{#each posts as |post|}}
 <div class="container msg center">
   <img class="img" src="https://palmbayprep.org/wp-content/uploads/2015/09/user-icon-placeholder.png"> </img>
   <p class="timeStamp grey-text">
@@ -31,9 +34,14 @@
 </div>
 {{/each}}
 
+</div>
+
 {{else}}
-<p class="timeStamp grey-text">
+<div class="container msg center">
+        <p class="timeStamp grey-text">
          No posts yet
         </p>
 {{/if}}
+
 <script src="/js/createPost.js"></script>
+
