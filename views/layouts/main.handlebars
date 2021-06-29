@@ -16,8 +16,8 @@
 <!-- Nav/wrappers -->
 
 <body id="home" class="bg-black">
-  <div id="page-container">
-    <div id="content-wrap">
+  <div id="content-wrap">
+    <div id="page-container">
       <!-- sticky nav bar -->
       <div class="navbar-fixed">
         <nav class="black">
@@ -27,11 +27,9 @@
               <a href="#" data-target="mobile-nav" class="sidenav-trigger">
                 <i class="material-icons btn-floating white center-align pulse black-text ">menu</i>
                 <ul class="right hide-on-med-and-down">
+
                   <li>
-                    <a href="#home">Home</a>
-                  </li>
-                  <li>
-                    <a href="#login">Logout</a>
+                    <a id="logout">Logout</a>
                   </li>
                 </ul>
             </div>
@@ -43,22 +41,19 @@
       <!-- side nav -->
       <ul class="sidenav" id="mobile-nav">
         <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#login">Login</a>
+          <a id="logout">Logout</a>
+
         </li>
       </ul>
       <!-- side nav -->
       {{{ body }}}
-        <!-- footer -->
-      </div>
+      <!-- footer -->
     </div>
-    <footer id="footer">
-      <footer class="white-text center border">
-        <p>Forum Friends &copy; 2021 | Made with materializeCSS | <a class="link"
-            href="https://github.com/huirayj/forum-friends">GitHub</a> </p>
-      </footer>
+  </div>
+  <footer id="footer" class="white-text center border">
+    <p>Forum Friends &copy; 2021 | Made with materializeCSS | <a class="link"
+        href="https://github.com/huirayj/forum-friends">GitHub</a> </p>
+  </footer>
 </body>
 <!-- footer -->
 
