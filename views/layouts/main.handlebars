@@ -33,7 +33,7 @@
                       <a>Welcome: {{ user.username }}</a>
                     </li>
                     <li>
-                      <a href="/" id="logout">Logout</a>
+                      <a href="/" class="logout">Logout</a>
                     </li>
                     <li>
                       <a href="/dashboard" id="dashboard">Dashboard</a>
@@ -54,7 +54,7 @@
           <a>Welcome: {{ user.username }}</a>
         </li>
         <li>
-          <a href="/" id="logout">Logout</a>
+          <a href="/" class="logout">Logout</a>
         </li>
       </ul>
       {{/unless}}
@@ -74,6 +74,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- linked to main -->
 <script src="/js/main.js"></script>
-</div>
+{{#unless loggedIn}}
+<script src="/js/logout.js"></script>
+{{/unless}}
 
 </html>

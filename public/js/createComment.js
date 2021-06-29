@@ -3,8 +3,6 @@ const commentFormHandler = async (e) => {
 
   const content = document.querySelector('#textarea1').value.trim();
   const post_id = document.querySelector('.comment-btn').getAttribute('data-id');
-  
-  console.log(post_id);
 
   if (content) {
     const res = await fetch('/api/comments', {
