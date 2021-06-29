@@ -1,14 +1,15 @@
 const router = require('express').Router();
+const session = require('express-session');
 const { User, Post, Comment } = require('../models');
 
-// const getCurrentUser = async (id) => {
-//     const userData = await User.findByPk(id);
-//     const user = userData.get({ plain: true });
-//     return user;
-// }
+const getCurrentUser = async (id) => {
+    const userData = await User.findByPk(id);
+    const user = userData.get({ plain: true });
+    return user;
+}
 
 router.get('/posts', async (req, res) => {
-    // const user = await getCurrentUser(req,session.user_id);
+    const user = await getCurrentUser(req.session.user_id);
     const postData = await Post.findAll({
         order: [['created_at', 'DESC']],
         include: [{
@@ -17,8 +18,8 @@ router.get('/posts', async (req, res) => {
         }]
     });
     const posts = postData.map(p => p.get({plain : true}));
-    
-    res.render('posts', {posts});
+    console.log(user);
+    res.render('posts', {posts, user});
 });
 
 router.get('/signup', (req, res) => {
