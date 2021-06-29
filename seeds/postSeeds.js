@@ -16,7 +16,6 @@ const postData = [
         content: 'Aenean viverra eu dui a lobortis.',
         user_id: 3
     },
-
 ];
 
 const seedPosts = () => Post.bulkCreate(postData);
