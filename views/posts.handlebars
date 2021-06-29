@@ -2,6 +2,11 @@
 <div class="container post">
   <div class="center">
     <form class="col s12 m1 new-msg-form">
+      <!-- Title input -->
+      <div class="input-field col s12">
+        <input id="title-input" type="text" class="validate">
+        <label for="post-title">Title</label>
+      </div>
       <!-- send button -->
       <!-- Message input -->
       <div class="input-field col s6 center" id="custom-input">
@@ -15,11 +20,9 @@
   </div>
 </div>
 
-<div class="container posts center">
-
 {{#if posts.length}}
-
 {{#each posts as |post|}}
+
 <div class="container msg center">
   <img class="img" src="https://palmbayprep.org/wp-content/uploads/2015/09/user-icon-placeholder.png"> </img>
   <p class="timeStamp grey-text">
@@ -34,14 +37,11 @@
 </div>
 {{/each}}
 
-</div>
-
 {{else}}
 <div class="container msg center">
-        <p class="timeStamp grey-text">
-         No posts yet
-        </p>
+  <p class="timeStamp grey-text">
+    No posts yet
+  </p>
+</div>
 {{/if}}
-
 <script src="/js/createPost.js"></script>
-
