@@ -1,4 +1,5 @@
 const loginFormHandler = async (event) => {
+  // Stop the browser from submitting the form so we can do so with JavaScript
   event.preventDefault();
 
   // Collect values from the login form
@@ -15,7 +16,9 @@ const loginFormHandler = async (event) => {
     });
     if (response.ok) {
       // If successful, redirect the browser to the post page
-      document.location.replace('/dashboard');
+      document.location.replace('/post');
+    } else {
+      alert('Failed to log in');
     }
   }
 };
@@ -35,7 +38,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/post');
     } else {
       alert(response.statusText);
     }
@@ -49,3 +52,4 @@ document
 document
   .querySelector('.sign-up')
   .addEventListener('submit', signupFormHandler);
+

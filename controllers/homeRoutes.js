@@ -1,12 +1,10 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 
-router.get('/post', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-    res.render('post');
+router.get('/posts', async (req, res) => {
+    const postData = await Post.findAll({});
+    const posts = postData.map(p => p.get({plain : true}));
+    res.render('posts', {posts});
 });
 
 router.get('/signup', (req, res) => {
