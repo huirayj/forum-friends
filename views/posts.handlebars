@@ -1,7 +1,12 @@
 <link rel="stylesheet" href="/css/postingStyle.css" />
 <div class="container post">
   <div class="center">
-    <form class="col s12 m1">
+    <form class="col s12 m1 new-msg-form">
+      <!-- Title input -->
+      <div class="input-field col s12">
+        <input id="title-input" type="text" class="validate">
+        <label for="post-title">Title</label>
+      </div>
       <!-- send button -->
       <!-- Message input -->
       <div class="input-field col s6 center" id="custom-input">
@@ -14,19 +19,28 @@
     </form>
   </div>
 </div>
-
+{{#if posts.length}}
 {{#each posts as |post|}}
 
 <div class="container msg center">
   <img class="img" src="https://palmbayprep.org/wp-content/uploads/2015/09/user-icon-placeholder.png"> </img>
   <p class="timeStamp grey-text">
-    {{ format_time post.createdAt }}
+    {{post.title}} - {{ format_time post.createdAt }}
   </p>
   <p class="user left-align">
-    {{ post.title }}
+    {{ user.username }}
   </p>
   <p>
     {{ post.content }}
   </p>
 </div>
 {{/each}}
+
+{{else}}
+<div class="container msg center">
+  <p class="timeStamp grey-text">
+    No posts yet
+  </p>
+</div>
+{{/if}}
+<script src="/js/createPost.js"></script>
