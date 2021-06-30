@@ -9,7 +9,7 @@ Dotenv, Express, Express Handlebars & Express-Session Front-End: Materialize, Ha
 
 [[Deployed-Site]](https://jdogcrane.github.io/covid-and-cats/)
 
-[[Site-Preview]](#Site-Preview)
+![image_url](./public/images/preview1.gif "Site preview")
 
 
 * [[Joshua's Github - HTML-CSS-Framework Specialist]](https://github.com/Jdogcrane)
@@ -36,10 +36,6 @@ This program can be run through a browser using the above link to the the deploy
 * Ryan: Back end mainly Database handling sequelize related JavaScript
 * Joshua: Front end design handling styling, related JavaScript, and handlebar for Messenger, Dashboard  and Edit-Posts
 * Nathan: Front end design handling styling, related JavaScript, and handlebar for login
-
-# Site Preview
-
-![image_url](./public/images/preview1.gif "Site preview")
 
 ## License 
 
