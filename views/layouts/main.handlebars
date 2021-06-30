@@ -27,7 +27,7 @@
               <a data-target="mobile-nav" class="sidenav-trigger">
                 <i class="material-icons btn-floating white center-align pulse black-text ">menu</i>
                 <ul class="right hide-on-med-and-down">
-                  {{!-- {{#unless loggedIn}} --}}
+                  {{#if loggedIn}}
                   <ul class="right hide-on-med-and-down">
                     <li>
                       <a>Welcome: {{ user.username }}</a>
@@ -42,7 +42,7 @@
                       <a href="/posts" id="posts">Forums</a>
                     </li>
                   </ul>
-                  {{!-- {{/unless}} --}}
+                  {{/if}}
                 </ul>
             </div>
           </div>
@@ -51,7 +51,7 @@
       <!-- sticky nav bar -->
 
       <!-- side nav -->
-      {{!-- {{#unless loggedIn}} --}}
+      {{#if loggedIn}}
       <ul class="sidenav" id="mobile-nav">
         <li>
           <a>Welcome: {{ user.username }}</a>
@@ -66,7 +66,7 @@
           <a href="/posts" id="posts">Forums</a>
         </li>
       </ul>
-      {{!-- {{/unless}} --}}
+      {{/if}}
       <!-- side nav -->
       {{{ body }}}
       <!-- footer -->
@@ -83,8 +83,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- linked to main -->
 <script src="/js/main.js"></script>
-{{#unless loggedIn}}
+{{#if loggedIn}}
 <script src="/js/logout.js"></script>
-{{/unless}}
+{{/if}}
 
 </html>

@@ -6,7 +6,7 @@ router.get('/', withAuth, async (req, res) => {
     try {
         const allPostData = await Post.findAll({
             where: { user_id: req.session.user_id },
-            attributes: ['id', 'title', 'content', 'created_at'],
+            order: [['created_at', 'DESC']],
             include: [{
                 model: Comment,
                 attributes: ['id', 'content', 'created_at', 'post_id', 'user_id'],
@@ -34,7 +34,6 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/edit/:id', withAuth, async (req, res) => {
     try {
         const aPostData = await Post.findByPk(req.params.id, {
-            attributes: ['id', 'title', 'content', 'created_at'],
             include: [{
                 model: Comment,
                 attributes: ['id', 'content', 'created_at', 'post_id', 'user_id'],
@@ -54,7 +53,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
         } else {
             const post = aPostData.get({ plain: true });
 
-            res.render('edit-post', {
+            res.render('edit', {
                 post,
                 loggedIn: true
             });
