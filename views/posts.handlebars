@@ -26,7 +26,7 @@
     {{#if posts.length}}
 
     {{#each posts as |post|}}
-{{!-- removed container here --}}
+    {{!-- removed container here --}}
     <div class="msg center">
       <p class="user center">
         {{ post.title }}
@@ -51,7 +51,8 @@
           <div class="collapsible-header black"><i class="material-icons">chat_bubble</i>Comments</div>
           {{#if post.comments.length}}
           {{#each post.comments as |comment|}}
-          <div class="collapsible-body"><span class="left">{{ user.username }}:</span> <span class="left"></span><span>{{comment.content}}</span></div>
+          <div class="collapsible-body"><span class="left">{{ user.username }}:</span> <span
+              class="left"></span><span>{{comment.content}}</span></div>
           {{/each}}
           {{else}}
           <div class="collapsible-body"><span>No comments yet</span></div>

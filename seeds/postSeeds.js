@@ -6,7 +6,7 @@ const postData = [
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         user_id: 1
     },
-    {   
+    {
         title: 'Phasellus congue',
         content: 'Phasellus congue dignissim erat, nec consequat nisi.',
         user_id: 2
