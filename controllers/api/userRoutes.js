@@ -88,10 +88,10 @@ router.post('/', async (req, res) => {
 router.post('/logout', (req, res) => {
     console.log(req.session.loggedIn);
     if (req.session.loggedIn) {
+        req.session.loggedIn = false;
+        console.log(req.session);
         req.session.destroy(() => {
-            console.log(req.session);
             res.status(204).end();
-            
         });
     } else {
         res.status(404).end();

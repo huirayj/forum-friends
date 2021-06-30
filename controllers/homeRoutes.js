@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const session = require('express-session');
 const { User, Post, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
 const getCurrentUser = async (id) => {
     const userData = await User.findByPk(id);
@@ -8,7 +9,7 @@ const getCurrentUser = async (id) => {
     return user;
 }
 
-router.get('/posts', async (req, res) => {
+router.get('/posts', withAuth, async (req, res) => {
     const user = await getCurrentUser(req.session.user_id);
     const postData = await Post.findAll({
         order: [['created_at', 'DESC']],

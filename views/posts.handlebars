@@ -22,7 +22,7 @@
 
 
 <div class="container container1 center">
-  <div class="posts">
+  <div class="posts post-comments">
     {{#if posts.length}}
 
     {{#each posts as |post|}}
@@ -44,7 +44,7 @@
       </p>
     </div>
     {{!-- removed container here --}}
-    <div class="comments ">
+    <div class="comments" data-id="{{post.id}}">
 
       <ul class="collapsible ">
         <li>
@@ -57,19 +57,17 @@
           <div class="collapsible-body"><span>No comments yet</span></div>
           {{/if}}
           <div class="collapsible-body">
-            <form class="col s12 new-comment-form">
+            <div class="col s12 new-comment-form">
               <div class="row">
                 <div class="input-field col s12">
-                  <textarea id="textarea1" class="materialize-textarea"></textarea>
+                  <textarea class="materialize-textarea comment-content"></textarea>
                   <label for="textarea1">Leave a comment</label>
-                  <button class="btn red waves-effect waves-light comment-btn" data-id={{post.id}} type="submit"
-                    name="send">Post
-                  <button class="btn red waves-effect waves-light comment-btn" data-id={{post.id}} type="submit" name="send">Comment
+                  <button class="btn red waves-effect waves-light comment-btn" data-id={{post.id}} type="submit">Comment
                     <i class="material-icons right">send</i>
                   </button>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
         </li>
       </ul>
