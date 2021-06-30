@@ -1,4 +1,5 @@
 
+
 body{
   justify-content: center;
   align-items: center;
@@ -17,7 +18,7 @@ input, button{
   position: relative;
   width: 900px;
   height: 550px;
-  background:white;
+  background:-webkit-linear-gradient(left, #ffffff, #727272); /*changed this to be slightly easier on the eyes*/
   box-shadow: 0 10px 20px black ;
   margin: 25px;
   margin-left: auto;
@@ -108,7 +109,7 @@ button{
   width: 900px;
   height: 100%;
   padding-left: 260px;
-  background: #fff;
+  background: -webkit-linear-gradient(right, #ffffff, #727272); /*changed this to be slightly easier on the eyes*/
   -webkit-transition: -webkit-transform 1.2s ease-in-out;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out;
@@ -197,7 +198,6 @@ button{
           transform:translateX(0);
 }
 
-
 .sign-in{
   padding-top: 65px;
   -webkit-transition-timing-function:ease-out;
@@ -283,4 +283,11 @@ button{
 
 .hide-main {
   display: none;
+}
+
+/* Josh changes */
+.container1 {
+  margin-top: 100px;
+  min-width: 1000px;
+  min-height: 700px;
 }

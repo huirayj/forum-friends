@@ -4,7 +4,7 @@
     <form class="col s12 m1 new-msg-form">
       <!-- Title input -->
       <div class="input-field col s12">
-        <input id="title-input" type="text" class="validate">
+        <input id="title-input" type="text" class="grey-text">
         <label for="post-title">Title</label>
       </div>
       <!-- send button -->
@@ -26,8 +26,8 @@
     {{#if posts.length}}
 
     {{#each posts as |post|}}
-
-    <div class="container msg center">
+{{!-- removed container here --}}
+    <div class="msg center">
       <p class="user center">
         {{ post.title }}
       </p>
@@ -43,7 +43,8 @@
         {{ post.content }}
       </p>
     </div>
-    <div class="container comments">
+    {{!-- removed container here --}}
+    <div class="comments ">
 
       <ul class="collapsible ">
         <li>
@@ -55,7 +56,7 @@
                 <div class="input-field col s12">
                   <textarea id="textarea1" class="materialize-textarea"></textarea>
                   <label for="textarea1">Leave a comment</label>
-                  <button class="btn red waves-effect waves-light comment-btn" data-id={{post.id}} type="submit" name="send">Post
+                  <button class="btn red waves-effect waves-light comment-btn" data-id={{post.id}} type="submit" name="send">Comment
                     <i class="material-icons right">send</i>
                   </button>
                 </div>
@@ -64,7 +65,7 @@
           </div>
           {{#if comments.length}}
           {{#each comments as |comment|}}
-          <div class="collapsible-body"><span>{{comments.content}}</span></div>
+          <div class="collapsible-body"><span>{{ user.username }} {{comments.content}}</span></div>
           {{/each}}
           {{else}}
           {{/if}}

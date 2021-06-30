@@ -2,16 +2,15 @@
   scroll-behavior: smooth;
 }
 
+
 .msg {
   border-radius: 2px;
-  margin-top: 1px;
-  margin-bottom: 1px;
   padding: 5px;
-  max-width: 500px;
+  max-width: 598px;
   border: 4px double transparent;
-  box-shadow: 2px 2px 20px black;
-  background: black;
-  color: white;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.397);
+  background: -webkit-linear-gradient(left, #222222, #000000);
+  color: rgb(167, 167, 167);
 }
 
 body {
@@ -22,7 +21,7 @@ body {
 }
 
 #welcome{
-  color: white;
+  color: rgb(167, 167, 167);
 }
 
 main {
@@ -45,16 +44,16 @@ main {
 .post {
   border: 2px solid rgb(0, 0, 0);
   max-width: 800px;
-  border-radius: 1px;
-  background-color: black;
-  color: white;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(left, #222222, #000000);
+  color: rgb(163, 163, 163);
   margin-top: 10px;
   padding: 10px;
-  box-shadow: 2px 2px 20px black;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.466);
 }
 
 .materialize-textarea {
-  color: white;
+  color: rgb(167, 167, 167);
 }
 
 .border {
@@ -68,34 +67,35 @@ main {
 
 .posts{
   overflow-y: scroll;
-  max-height: 1000px;
+  max-height: 800px;
   margin-top: 5px;
+  border-radius: 5px;
 }
 
 .container1 {
-  max-width: 800px;
+  max-width: 620px;
   background-color: rgba(61, 61, 61, 0.26);
 }
 
 ::-webkit-scrollbar {
-  width:16px;border-left:5px solid rgba(68, 68, 68, 0.411)
+  width:16px;border-left:5px solid rgba(68, 68, 68, 0)
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color:black;
+  background: -webkit-linear-gradient(left, #222222, #000000);
   border-radius: 20px;
 }
 
 #content-wrap {
-     /* Footer height */
+  padding-bottom: 2.5rem;   /* Footer height */
 }
 
 #footer {
-  position:absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  min-height: 2.5rem; 
-  margin: 0px;           /* Footer height */
+  min-height: 2.5rem;            /* Footer height */
+  padding: 12px;
   z-index: 1;
 }
 
@@ -110,29 +110,94 @@ main {
  }
 
  #title-input {
-   color: white;
+   color: rgb(161, 141, 141);
    min-height: 60px !important;
    min-width: 100px !important;
  }
 
-.comments {
-  max-width: 400px;
-  background-color: black;
-  margin-top: 2px;
-}
 
 .new-comment-form {
   min-height: 1px !important;
 }
 
 html {
-  color: white;
+  color: rgb(167, 167, 167);
 }
+
+.comments {
+  max-width: 598px;
+  background-color: rgb(19, 19, 19);
+  border: solid rgb(32, 32, 32) 2px;
+  background: -webkit-linear-gradient(right, #222222, #000000);
+}
+
 
 .edit-btn, .delete-btn {
 min-width: 101px;
 min-height: 36px;
 border: none;
-border-radius: 2px;
-color: white
+border-radius: 20px;
+color: rgb(255, 255, 255);
+}
+
+.collapsible {
+  margin: 0px !important;
+  border: none !important;
+}
+
+.collapsible-header {
+  border: none !important;
+  background: -webkit-linear-gradient(right, #222222, #000000);;
+}
+
+.collapsible-header:hover {
+  background: -webkit-linear-gradient(right, #313131, #161616);
+}
+
+.collapsible-body {
+  border: 1px solid rgb(0, 0, 0) !important;
+}
+
+.short-text { display: none; }
+
+
+.btn {
+border-radius: 20px;
+}
+
+.input-field {
+  margin: 0px;
+  padding: 5px;
+}
+
+.title-input {
+  background: black;
+}
+
+ /* label color */
+ .input-field label {
+  color: rgb(104, 104, 104);
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: rgb(104, 104, 104);
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid rgb(104, 104, 104);
+  box-shadow: 0 1px 0 0 rgb(104, 104, 104);
+}
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid rgb(104, 104, 104);
+  box-shadow: 0 1px 0 0 rgb(104, 104, 104);
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid rgb(104, 104, 104);
+  box-shadow: 0 1px 0 0 rgb(104, 104, 104);
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: rgb(104, 104, 104);
 }
