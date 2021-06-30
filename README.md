@@ -3,21 +3,20 @@
 ## Description
 Forum Friends is an application that allows users to message with other users in a format similar to a traditional forum or message board. After a user signs up or logs in (if they already have an account) they are then allowed to make posts and comment on posts created by other users. 
 
-Numerous node packages were used to create the backend/database side of the application. We used the Materialize CSS framework to assist in developing the front-end.
+<img src="https://github.com/huirayj/forum-friends/blob/4afd4425bd4bc5df9db3ceb93c54f6ce69acecfa/public/images/login-screenshot.png" width="614" height="544">
 
-![Screenshot 1 of project](#link)
+Numerous node packages were used to create the backend/database side of the application, which allowed us to do things such as create/organize the database, encrypt passwords, track a user's session. We used the Materialize CSS framework to assist in developing the front-end in tandem with vanilla CSS. Express Handlebars allowed us to create a template for the HTML page that then takes the data from the back-end.
 
-![Screenshot 2 of project](#link)
+<img src="https://github.com/huirayj/forum-friends/blob/4afd4425bd4bc5df9db3ceb93c54f6ce69acecfa/public/images/posts-screenshot.png" width="614" height="544">
 
 [Link to deployed project](https://forum-friends.herokuapp.com/)
 
 ## Table of Contents
 - [Description](#Description)
 - [Installation](#Installation)
-- [Usage](#Usage)
-- [License](#License)
 - [Contributors](#Contributors)
-- [Questions](#Questions)
+- [Project Demo](#Project Demo)
+- [License](#License)
 
 ## Installation
 This program can be run through a browser using the above link to the the deployed application. Alternatively, to run this application locally you will need to:
@@ -34,7 +33,15 @@ This program can be run through a browser using the above link to the the deploy
 ## Contributors
 This project was made possible through the contributions of [Justin](https://github.com/huirayj), [Ryan](https://github.com/ryanpaynt), [Josh](https://github.com/Jdogcrane), and [Nathan](https://github.com/nzerr57).
 
-## Questions
+Breakdown of Roles
+<ul>
+  <li>Justin: Back end mainly Handling API related JavaScript</li>
+  <li>Ryan: Back end mainly Database handling sequelize related JavaScript</li>
+  <li>Joshua: Front end design handling styling and handlebar for Messenger, Dashboard and Edit-Posts</li>
+  <li>Nathan: Front end design handling styling and handlebar for login</li>
+</ul>
+
+## Project Demo
 
 
 ## License 
