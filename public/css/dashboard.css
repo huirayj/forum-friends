@@ -68,7 +68,7 @@ main {
 
 .posts{
   overflow-y: scroll;
-  max-height: 1000px;
+  max-height: 640px;
   margin-top: 5px;
 }
 
