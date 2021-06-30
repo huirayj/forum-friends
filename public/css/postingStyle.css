@@ -24,7 +24,7 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
-#welcome{
+#welcome {
   color: rgb(167, 167, 167);
 }
 
@@ -64,11 +64,11 @@ main {
 }
 
 @viewport {
-  width: device-width ;
-  zoom: 1.0 ;
+  width: device-width;
+  zoom: 1.0;
 }
 
-.posts{
+.posts {
   overflow-y: scroll;
   max-height: 515px;
   margin-top: 5px;
@@ -81,7 +81,8 @@ main {
 }
 
 ::-webkit-scrollbar {
-  width:16px;border-left:5px solid rgba(68, 68, 68, 0)
+  width: 16px;
+  border-left: 5px solid rgba(68, 68, 68, 0)
 }
 
 ::-webkit-scrollbar-thumb {
@@ -90,14 +91,16 @@ main {
 }
 
 #content-wrap {
-  padding-bottom: 2.5rem;   /* Footer height */
+  padding-bottom: 2.5rem;
+  /* Footer height */
 }
 
 #footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  min-height: 2.5rem;            /* Footer height */
+  min-height: 2.5rem;
+  /* Footer height */
   padding: 12px;
   z-index: 1;
 }
@@ -106,18 +109,18 @@ main {
   min-height: 100px !important;
 }
 
- /* label underline focus color for materialize*/
-  .materialize-textarea:focus {
+/* label underline focus color for materialize*/
+
+.materialize-textarea:focus {
   border-bottom: 1px solid #ffffff !important;
   box-shadow: 0 1px 0 0 #ffffff !important;
- }
+}
 
- #title-input {
-   color: rgb(161, 141, 141);
-   min-height: 60px !important;
-   min-width: 100px !important;
- }
-
+#title-input {
+  color: rgb(161, 141, 141);
+  min-height: 60px !important;
+  min-width: 100px !important;
+}
 
 .new-comment-form {
   min-height: 1px !important;
@@ -134,13 +137,12 @@ html {
   background: -webkit-linear-gradient(right, #222222, #000000);
 }
 
-
 .edit-btn, .delete-btn {
-min-width: 101px;
-min-height: 36px;
-border: none;
-border-radius: 2px;
-color: rgb(167, 167, 167);
+  min-width: 101px;
+  min-height: 36px;
+  border: none;
+  border-radius: 2px;
+  color: rgb(167, 167, 167);
 }
 
 .collapsible {
@@ -150,7 +152,8 @@ color: rgb(167, 167, 167);
 
 .collapsible-header {
   border: none !important;
-  background: -webkit-linear-gradient(right, #222222, #000000);;
+  background: -webkit-linear-gradient(right, #222222, #000000);
+  ;
 }
 
 .collapsible-header:hover {
@@ -161,11 +164,12 @@ color: rgb(167, 167, 167);
   border: 1px solid rgb(0, 0, 0) !important;
 }
 
-.short-text { display: none; }
-
+.short-text {
+  display: none;
+}
 
 .btn {
-border-radius: 20px;
+  border-radius: 20px;
 }
 
 .input-field {
@@ -177,30 +181,41 @@ border-radius: 20px;
   background: black;
 }
 
- /* label color */
- .input-field label {
+/* label color */
+
+.input-field label {
   color: rgb(104, 104, 104);
 }
+
 /* label focus color */
-.input-field input[type=text]:focus + label {
+
+.input-field input[type=text]:focus+label {
   color: rgb(104, 104, 104);
 }
+
 /* label underline focus color */
+
 .input-field input[type=text]:focus {
   border-bottom: 1px solid rgb(104, 104, 104);
   box-shadow: 0 1px 0 0 rgb(104, 104, 104);
 }
+
 /* valid color */
+
 .input-field input[type=text].valid {
   border-bottom: 1px solid rgb(104, 104, 104);
   box-shadow: 0 1px 0 0 rgb(104, 104, 104);
 }
+
 /* invalid color */
+
 .input-field input[type=text].invalid {
   border-bottom: 1px solid rgb(104, 104, 104);
   box-shadow: 0 1px 0 0 rgb(104, 104, 104);
 }
+
 /* icon prefix focus color */
+
 .input-field .prefix.active {
   color: rgb(104, 104, 104);
 }
