@@ -6,7 +6,7 @@
 
     {{#each posts as |post|}}
     <div class=" msg center">
-    <button class="red waves-effect waves-light delete-btn left comment-btn" data-id={{post.id}} name="delete">Delete Post</button>
+    <button class="red waves-effect waves-light delete-btn left" data-id={{post.id}} name="delete">Delete Post</button>
 
     <a href="/dashboard/edit/{{post.id}}">
     <button class="blue waves-effect waves-light edit-btn right comment-btn" data-id={{post.id}} name="edit">Edit Post</button>
