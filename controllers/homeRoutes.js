@@ -6,9 +6,11 @@ const withAuth = require('../utils/auth');
 const getCurrentUser = async (id) => {
     const userData = await User.findByPk(id);
     const user = userData.get({ plain: true });
+
     return user;
 }
 
+// renders all posts by time posted
 router.get('/posts', withAuth, async (req, res) => {
     const user = await getCurrentUser(req.session.user_id);
     const postData = await Post.findAll({
@@ -34,7 +36,7 @@ router.get('/posts', withAuth, async (req, res) => {
     res.render('posts', { posts, user, loggedIn: req.session.loggedIn });
 });
 
-
+// user signup
 router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -43,6 +45,7 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+// gets renders all posts
 router.get('/', async (req, res) => {
     try {
         const allPostData = await Post.findAll({
@@ -72,39 +75,6 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-// router.get('/post/:id', async (req, res) => {
-//     try {
-//         const aPostData = await Post.findByPk(req.params.id, {
-//             attributes: ['id', 'title', 'content', 'created_at'],
-//             include: [{
-//                 model: Comment,
-//                 attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
-//                 include: {
-//                     model: User,
-//                     attributes: ['username']
-//                 }
-//             },
-//             {
-//                 model: User,
-//                 attributes: ['username']
-//             }]
-//         });
-
-//         if (!aPostData) {
-//             res.status(404).json({ message: 'No post found with that id' });
-//         } else {
-//             const post = aPostData.get({ plain: true });
-
-//             res.render('single-post', {
-//                 post,
-//                 loggedIn: req.session.loggedIn
-//             });
-//         }
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
 
 router.get('/posts', async (req, res) => {
     try {
