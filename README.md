@@ -10,9 +10,10 @@ Dotenv, Express, Express Handlebars & Express-Session Front-End: Materialize, Ha
 
 [[Deployed-Site]](https://forum-friends.herokuapp.com/)
 
+![image_url](./public/images/forum-friends-demo.gif "Site preview")
+
 ![image_url](./public/images/preview1.gif "Site preview")
 
-![image_url](./public/images/forum-friends-demo.gif "Site preview")
 ### Contributors
 
 * [[Joshua's Github - HTML-CSS-Framework Specialist]](https://github.com/Jdogcrane)
