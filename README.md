@@ -6,11 +6,11 @@ Forum Friends is an application that allows users to message with other users in
 Dotenv, Express, Express Handlebars & Express-Session Front-End: Materialize, HandleBars and of course, CSS styling.
 </p>
 
+
 [[Deployed-Site]](https://jdogcrane.github.io/covid-and-cats/)
 
 [[Site-Preview]](#Site-Preview)
 
-### Contributors
 
 * [[Joshua's Github - HTML-CSS-Framework Specialist]](https://github.com/Jdogcrane)
 

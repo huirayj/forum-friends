@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// get all posts and orders them by time posted
 router.get('/', withAuth, async (req, res) => {
     try {
         const allPostData = await Post.findAll({
@@ -31,6 +32,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
+// edit post by id
 router.get('/edit/:id', withAuth, async (req, res) => {
     try {
         const aPostData = await Post.findByPk(req.params.id, {
