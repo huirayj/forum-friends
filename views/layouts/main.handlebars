@@ -30,7 +30,9 @@
                   {{#if loggedIn}}
                   <ul class="right hide-on-med-and-down">
                     <li>
+                      {{#if user.username}}
                       <a>Welcome: {{ user.username }}</a>
+                      {{/if}}
                     </li>
                     <li>
                       <a href="/" class="logout">Sign in / Logout</a>
