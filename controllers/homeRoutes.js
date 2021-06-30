@@ -22,6 +22,7 @@ router.get('/posts', async (req, res) => {
     res.render('posts', {posts, user});
 });
 
+
 router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
