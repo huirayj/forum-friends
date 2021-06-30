@@ -5,7 +5,7 @@
     {{#if posts.length}}
 
     {{#each posts as |post|}}
-    <div class="container msg center">
+    <div class=" msg center">
     <button class="red waves-effect waves-light delete-btn left comment-btn" data-id={{post.id}} name="delete">Delete Post</button>
 
     <a href="/dashboard/edit/{{post.id}}">
@@ -26,14 +26,14 @@
         {{ post.content }}
       </p>
     </div>
-    <div class="container comments">
+    <div class="comments">
 
       <ul class="collapsible ">
         <li>
           <div class="collapsible-header black"><i class="material-icons">chat_bubble</i>Comments</div>
           {{#if comments.length}}
           {{#each comments as |comment|}}
-          <div class="collapsible-body"><span>{{comment.content}}</span></div>
+          <div class="collapsible-body"> <span class="left">{{ user.username }}:</span> <span class="left"> {{comment.content}}</span></div>
           {{/each}}
           {{else}}
           {{/if}}
@@ -44,7 +44,7 @@
   </div>
 </div>
 {{else}}
-<div class="container msg center">
+<div class=" msg center">
   <p class="timeStamp grey-text">
     No posts yet
   </p>

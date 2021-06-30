@@ -1,6 +1,4 @@
 
-
-
 body{
     background: -webkit-linear-gradient(left, #3a9cf7, #463d3d);
     font-family: 'Nunito', sans-serif;
@@ -15,7 +13,7 @@ body{
   .mo-cont{
       margin-left: auto;
       margin-right: auto;
-      background-color: white;
+      background: -webkit-linear-gradient(left, #ffffff, #b8b8b8); /*changed this to be slightly easier on the eyes*/
       border-radius: 8px;
       box-shadow: 12px 12px 5px 1px black;
       padding: 5px;
