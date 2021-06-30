@@ -15,23 +15,23 @@ router.get('/posts', withAuth, async (req, res) => {
         order: [['created_at', 'DESC']],
         include: [
             {
-            model: User,
-            attributes: ['username']
-        },
-        {
-            model: Comment,
-            attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
-            order: [['created_at', 'DESC']],
-            include: {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Comment,
+                attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
+                order: [['created_at', 'DESC']],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
             }
-        }
-    ]
+        ]
     });
-    const posts = postData.map(p => p.get({plain : true}));
-    
-    res.render('posts', {posts, user, loggedIn: req.session.loggedIn});
+    const posts = postData.map(p => p.get({ plain: true }));
+
+    res.render('posts', { posts, user, loggedIn: req.session.loggedIn });
 });
 
 
@@ -49,18 +49,18 @@ router.get('/', async (req, res) => {
             attributes: ['id', 'title', 'content', 'created_at'],
             include: [
                 {
-                model: Comment,
-                attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
-                include: {
+                    model: Comment,
+                    attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
+                },
+                {
                     model: User,
                     attributes: ['username']
                 }
-            },
-            {
-                model: User,
-                attributes: ['username']
-            }
-        ]
+            ]
         })
         const posts = allPostData.map(post => post.get({ plain: true }));
 
@@ -90,7 +90,7 @@ router.get('/', async (req, res) => {
 //                 attributes: ['username']
 //             }]
 //         });
-    
+
 //         if (!aPostData) {
 //             res.status(404).json({ message: 'No post found with that id' });
 //         } else {
@@ -109,7 +109,7 @@ router.get('/', async (req, res) => {
 router.get('/posts', async (req, res) => {
     try {
         const allCommentData = await Comment.findAll({});
-        
+
         res.status(200).json(allCommentData);
     } catch (err) {
         res.status(500).json(err);
