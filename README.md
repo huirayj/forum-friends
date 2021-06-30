@@ -15,7 +15,7 @@ Numerous node packages were used to create the backend/database side of the appl
 - [Description](#Description)
 - [Installation](#Installation)
 - [Contributors](#Contributors)
-- [Project Demo](#Project Demo)
+- [Project Demo](#Project-Demo)
 - [License](#License)
 
 ## Installation
