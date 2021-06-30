@@ -4,14 +4,14 @@
     <form class="col s12 m1 new-msg-form">
       <!-- Title input -->
       <div class="input-field col s12">
-        <input id="title-input" type="text" class="validate">
+        <input value={{post.title}} id="title-input" type="text" class="validate">
         <label for="post-title">Title</label>
       </div>
       <!-- send button -->
       <!-- Message input -->
       <div class="input-field col s6 center" id="custom-input">
-        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-        <button class="btn red waves-effect waves-light" type="submit" name="send">post
+        <textarea value={{post.content}} id="icon_prefix2" class="materialize-textarea"></textarea>
+        <button class="btn red waves-effect waves-light" type="submit" name="send">change
           <i class="material-icons right">send</i>
         </button>
         <label for="icon_prefix2">Message</label>
@@ -21,65 +21,4 @@
 </div>
 
 
-<div class="container container1 center">
-  <div class="posts">
-    {{#if posts.length}}
-
-    {{#each posts as |post|}}
-
-    <div class="container msg center">
-      <p class="user center">
-        {{ post.title }}
-      </p>
-      <ul class="timeStamp grey-text">
-        <li>
-          {{ format_time post.createdAt }}
-        </li>
-        <li>
-          {{ user.username }}
-        </li>
-      </ul>
-      <p>
-        {{ post.content }}
-      </p>
-    </div>
-    <div class="container comments">
-
-      <ul class="collapsible ">
-        <li>
-          <div class="collapsible-header black"><i class="material-icons">chat_bubble</i>Comments</div>
-          <div class="collapsible-body"><span>No comments yet</span></div>
-          <div class="collapsible-body">
-            <form class="col s12 new-comment-form">
-              <div class="row">
-                <div class="input-field col s12">
-                  <textarea id="textarea1" class="materialize-textarea"></textarea>
-                  <label for="textarea1">Leave a comment</label>
-                  <button class="btn red waves-effect waves-light" type="submit" name="send">Post
-                    <i class="material-icons right">send</i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-          {{#if comments.length}}
-          {{#each comments as |comment|}}
-          <div class="collapsible-body"><span>{{comment.content}}</span></div>
-          {{/each}}
-          {{else}}
-          {{/if}}
-        </li>
-      </ul>
-    </div>
-    {{/each}}
-  </div>
-</div>
-{{else}}
-<div class="container msg center">
-  <p class="timeStamp grey-text">
-    No posts yet
-  </p>
-</div>
-{{/if}}
-
-<script src="/js/createPost.js"></script>
+<script src="/js/managePost.js"></script>
