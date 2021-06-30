@@ -2,17 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
-    try {
-        const allUserData = await User.findAll({
-            attributes: { exclude: ['password'] }
-        });
-        res.status(200).json(allUserData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
+// finds user by id
 router.get('/:id', async (req, res) => {
     try {
         const aUserData = await User.findByPk(req.params.id, {
@@ -55,6 +45,7 @@ router.post('/signup', async (req, res) => {
     });
 });
 
+// user login
 router.post('/', async (req, res) => {
     try {
         const aUserData = await User.findOne({
@@ -85,44 +76,16 @@ router.post('/', async (req, res) => {
     }
 });
 
+// user logout
 router.post('/logout', (req, res) => {
     console.log(req.session.loggedIn);
     if (req.session.loggedIn) {
         req.session.loggedIn = false;
-        console.log(req.session);
         req.session.destroy(() => {
             res.status(204).end();
         });
     } else {
         res.status(404).end();
-    }
-});
-
-router.put('/:id', withAuth, async (req, res) => {
-    try {
-        const updUserData = await User.update(req.body, {
-            where: { id: req.params.id }
-        });
-
-        (!updUserData[0]) ?
-            res.status(404).json({ message: 'No user found with that id' }) :
-            res.status(200).json(updUserData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-router.delete('/:id', withAuth, async (req, res) => {
-    try {
-        const rmUserData = await User.destroy({
-            where: { id: req.params.id }
-        });
-
-        (!rmUserData) ?
-            res.status(404).json({ message: 'No user found with that id' }) :
-            res.json(rmUserData);
-    } catch (err) {
-        res.status(500).json(err);
     }
 });
 

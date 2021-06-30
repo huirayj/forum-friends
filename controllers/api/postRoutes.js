@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// gets all posts
 router.get('/', async (req, res) => {
     try {
         const allPostData = await Post.findAll({
@@ -27,6 +28,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// gets a post by id
 router.get('/:id', async (req, res) => {
     try {
         const aPostData = await Post.findByPk(req.params.id, {
@@ -54,6 +56,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+// creates a post
 router.post('/', withAuth ,async (req, res) => {
     try {
         const newPostData = await Post.create({
@@ -67,6 +70,7 @@ router.post('/', withAuth ,async (req, res) => {
     }
 });
 
+// edits a post
 router.put('/:id', withAuth, async (req, res) => {
     try {
         const updPostData = await Post.update({
@@ -85,6 +89,7 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 });
 
+// deletes a post by id
 router.delete('/:id', withAuth, async (req, res) => {
     try {
         const rmPostData = await Post.destroy({
