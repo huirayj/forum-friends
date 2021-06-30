@@ -29,9 +29,11 @@
                 <ul class="right hide-on-med-and-down">
                   {{#if loggedIn}}
                   <ul class="right hide-on-med-and-down">
+                      {{#if user.username}}
                     <li>
                       <a>Welcome: {{ user.username }}</a>
                     </li>
+                    {{/if}}
                     <li>
                       <a href="/" class="logout">Sign in / Logout</a>
                     </li>
