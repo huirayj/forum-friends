@@ -1,9 +1,9 @@
-const newFormHandler = async (e) => {
+const createPostHandler = async (e) => {
     e.preventDefault();
 
     const title = document.querySelector('#title-input').value.trim();
     const content = document.querySelector('textarea').value.trim();
-    console.log(title, content);
+
     const res = await fetch(`/api/posts`, {
       method: 'POST',
       body: JSON.stringify({
@@ -21,4 +21,4 @@ const newFormHandler = async (e) => {
       alert(res.statusText);
     }
   }
-  document.querySelector('.new-msg-form').addEventListener('submit', newFormHandler);
+  document.querySelector('.new-msg-form').addEventListener('submit', createPostHandler);
