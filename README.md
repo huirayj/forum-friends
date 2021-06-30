@@ -12,6 +12,8 @@ Dotenv, Express, Express Handlebars & Express-Session Front-End: Materialize, Ha
 ![image_url](./public/images/preview1.gif "Site preview")
 
 
+### Contributors
+
 * [[Joshua's Github - HTML-CSS-Framework Specialist]](https://github.com/Jdogcrane)
 
 * [[Justin's Github - JavaScript Specialist]](https://github.com/huirayj)
