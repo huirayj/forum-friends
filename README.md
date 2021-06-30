@@ -43,4 +43,4 @@ This program can be run through a browser using the above link to the the deploy
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Copyright © 2021 all rights reserved
+<h5 style="text-align: center;">Copyright © 2021</h5>
