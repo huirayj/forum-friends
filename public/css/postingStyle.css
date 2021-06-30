@@ -219,3 +219,22 @@ html {
 .input-field .prefix.active {
   color: rgb(104, 104, 104);
 }
+
+.titleSmall {
+  display: none !important;
+}
+
+@media only screen and (max-width: 480px) {
+  #footer {
+  display: none !important;
+  }
+
+  .titleBig {
+  display: none !important;
+  }
+
+  .titleSmall {
+    display: inline-block !important; 
+  }
+
+  }
