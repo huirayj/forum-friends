@@ -65,7 +65,7 @@
           </div>
           {{#if comments.length}}
           {{#each comments as |comment|}}
-          <div class="collapsible-body"><span>{{comments.content}}</span></div>
+          <div class="collapsible-body"><span>{{ user.username }} {{comments.content}}</span></div>
           {{/each}}
           {{else}}
           {{/if}}
