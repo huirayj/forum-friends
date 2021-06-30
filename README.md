@@ -42,7 +42,7 @@ Breakdown of Roles
 </ul>
 
 ## Project Demo
-
+<img src="./public/images/forum-friends-demo.gif" alt="demonstration video">
 
 ## License 
 
