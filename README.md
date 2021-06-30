@@ -8,7 +8,7 @@ Dotenv, Express, Express Handlebars & Express-Session Front-End: Materialize, Ha
 </p>
 
 
-[[Deployed-Site]](https://jdogcrane.github.io/covid-and-cats/)
+[[Deployed-Site]](https://forum-friends.herokuapp.com/)
 
 ![image_url](./public/images/preview1.gif "Site preview")
 
