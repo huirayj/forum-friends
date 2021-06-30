@@ -1,0 +1,138 @@
+* {
+  scroll-behavior: smooth;
+}
+
+.msg {
+  border-radius: 2px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding: 5px;
+  max-width: 500px;
+  border: 4px double transparent;
+  box-shadow: 2px 2px 20px black;
+  background: black;
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  flex-direction: column;
+  background: -webkit-linear-gradient(left, #3a9cf7, #b33e65);
+  font-family: 'Nunito', sans-serif;
+}
+
+#welcome{
+  color: white;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.img {
+  max-width: 70px;
+  float: left;
+}
+
+.user {
+  justify-content: space-around;
+}
+
+.timeStamp {
+  box-sizing: content-box;
+}
+
+.post {
+  border: 2px solid rgb(0, 0, 0);
+  max-width: 800px;
+  border-radius: 1px;
+  background-color: black;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  box-shadow: 2px 2px 20px black;
+}
+
+.materialize-textarea {
+  color: white;
+}
+
+.border {
+  background: -webkit-linear-gradient(left, #2f7cc4, #571e31);
+}
+
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}
+
+.posts{
+  overflow-y: scroll;
+  max-height: 1000px;
+  margin-top: 5px;
+}
+
+.container1 {
+  max-width: 800px;
+  background-color: rgba(61, 61, 61, 0.26);
+}
+
+::-webkit-scrollbar {
+  width:16px;border-left:5px solid rgba(68, 68, 68, 0.411)
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:black;
+  border-radius: 20px;
+}
+
+#content-wrap {
+     /* Footer height */
+}
+
+#footer {
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 2.5rem; 
+  margin: 0px;           /* Footer height */
+  z-index: 1;
+}
+
+.materialize-textarea {
+  min-height: 100px !important;
+}
+
+ /* label underline focus color for materialize*/
+  .materialize-textarea:focus {
+  border-bottom: 1px solid #ffffff !important;
+  box-shadow: 0 1px 0 0 #ffffff !important;
+ }
+
+ #title-input {
+   color: white;
+   min-height: 60px !important;
+   min-width: 100px !important;
+ }
+
+.comments {
+  max-width: 400px;
+  background-color: black;
+  margin-top: 2px;
+}
+
+.new-comment-form {
+  min-height: 1px !important;
+}
+
+html {
+  color: white;
+}
+
+.edit-btn, .delete-btn {
+min-width: 101px;
+min-height: 36px;
+border: none;
+border-radius: 2px;
+color: white
+}
