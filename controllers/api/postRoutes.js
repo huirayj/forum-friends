@@ -55,9 +55,6 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', withAuth ,async (req, res) => {
-    console.log(req.body);
-    console.log(req.session.user_id);
-    console.log(req.session.loggedIn);
     try {
         const newPostData = await Post.create({
             title: req.body.title,

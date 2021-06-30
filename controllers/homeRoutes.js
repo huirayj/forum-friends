@@ -12,14 +12,25 @@ router.get('/posts', async (req, res) => {
     const user = await getCurrentUser(req.session.user_id);
     const postData = await Post.findAll({
         order: [['created_at', 'DESC']],
-        include: [{
+        include: [
+            {
             model: User,
             attributes: ['username']
-        }]
+        },
+        {
+            model: Comment,
+            attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
+            order: [['created_at', 'DESC']],
+            include: {
+                model: User,
+                attributes: ['username']
+            }
+        }
+    ]
     });
     const posts = postData.map(p => p.get({plain : true}));
-    console.log(user);
-    res.render('posts', {posts, user});
+    
+    res.render('posts', {posts, user, loggedIn: req.session.loggedIn});
 });
 
 
@@ -61,38 +72,38 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/post/:id', async (req, res) => {
-    try {
-        const aPostData = await Post.findByPk(req.params.id, {
-            attributes: ['id', 'title', 'content', 'created_at'],
-            include: [{
-                model: Comment,
-                attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
-            {
-                model: User,
-                attributes: ['username']
-            }]
-        });
+// router.get('/post/:id', async (req, res) => {
+//     try {
+//         const aPostData = await Post.findByPk(req.params.id, {
+//             attributes: ['id', 'title', 'content', 'created_at'],
+//             include: [{
+//                 model: Comment,
+//                 attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
+//                 include: {
+//                     model: User,
+//                     attributes: ['username']
+//                 }
+//             },
+//             {
+//                 model: User,
+//                 attributes: ['username']
+//             }]
+//         });
     
-        if (!aPostData) {
-            res.status(404).json({ message: 'No post found with that id' });
-        } else {
-            const post = aPostData.get({ plain: true });
+//         if (!aPostData) {
+//             res.status(404).json({ message: 'No post found with that id' });
+//         } else {
+//             const post = aPostData.get({ plain: true });
 
-            res.render('single-post', {
-                post,
-                loggedIn: req.session.loggedIn
-            });
-        }
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+//             res.render('single-post', {
+//                 post,
+//                 loggedIn: req.session.loggedIn
+//             });
+//         }
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 router.get('/posts', async (req, res) => {
     try {

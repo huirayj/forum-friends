@@ -86,16 +86,19 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
+    console.log(req.session.loggedIn);
     if (req.session.loggedIn) {
         req.session.destroy(() => {
+            console.log(req.session);
             res.status(204).end();
+            
         });
     } else {
         res.status(404).end();
     }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const updUserData = await User.update(req.body, {
             where: { id: req.params.id }
