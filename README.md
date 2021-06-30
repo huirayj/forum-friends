@@ -1,3 +1,4 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 <h1 style="text-align: center;">Forum Friends</h1>
 
 ## Description
@@ -38,9 +39,5 @@ This program can be run through a browser using the above link to the the deploy
 * Ryan: Back end mainly Database handling sequelize related JavaScript
 * Joshua: Front end design handling styling, related JavaScript, and handlebar for Messenger, Dashboard  and Edit-Posts
 * Nathan: Front end design handling styling, related JavaScript, and handlebar for login
-
-## License 
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <h5 style="text-align: center;">Copyright © 2021</h5>
