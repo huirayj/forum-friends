@@ -27,7 +27,7 @@
               <a data-target="mobile-nav" class="sidenav-trigger">
                 <i class="material-icons btn-floating white center-align pulse black-text ">menu</i>
                 <ul class="right hide-on-med-and-down">
-                  {{#unless loggedIn}}
+                  {{!-- {{#unless loggedIn}} --}}
                   <ul class="right hide-on-med-and-down">
                     <li>
                       <a>Welcome: {{ user.username }}</a>
@@ -38,8 +38,11 @@
                     <li>
                       <a href="/dashboard" id="dashboard">Dashboard</a>
                     </li>
+                    <li>
+                      <a href="/posts" id="posts">Forums</a>
+                    </li>
                   </ul>
-                  {{/unless}}
+                  {{!-- {{/unless}} --}}
                 </ul>
             </div>
           </div>
@@ -48,7 +51,7 @@
       <!-- sticky nav bar -->
 
       <!-- side nav -->
-      {{#unless loggedIn}}
+      {{!-- {{#unless loggedIn}} --}}
       <ul class="sidenav" id="mobile-nav">
         <li>
           <a>Welcome: {{ user.username }}</a>
@@ -56,8 +59,14 @@
         <li>
           <a href="/" class="logout">Logout</a>
         </li>
+        <li>
+          <a href="/dashboard" id="dashboard">Dashboard</a>
+        </li>
+        <li>
+          <a href="/posts" id="posts">Forums</a>
+        </li>
       </ul>
-      {{/unless}}
+      {{!-- {{/unless}} --}}
       <!-- side nav -->
       {{{ body }}}
       <!-- footer -->

@@ -4,14 +4,14 @@
     <form class="col s12 m1 new-msg-form">
       <!-- Title input -->
       <div class="input-field col s12">
-        <input value={{post.title}} id="title-input" type="text" class="validate">
+        <input value={{post.title}} id="title-input" type="text" class="validate" name="title">
         <label for="post-title">Title</label>
       </div>
       <!-- send button -->
       <!-- Message input -->
       <div class="input-field col s6 center" id="custom-input">
-        <textarea value={{post.content}} id="icon_prefix2" class="materialize-textarea"></textarea>
-        <button class="btn red waves-effect waves-light" type="submit" name="send">change
+        <textarea id="icon_prefix2" class="materialize-textarea" name="content">{{post.content}}</textarea>
+        <button class="btn edit-btn red waves-effect waves-light" data-id={{post.id}} type="submit" >change
           <i class="material-icons right">send</i>
         </button>
         <label for="icon_prefix2">Message</label>
@@ -21,4 +21,4 @@
 </div>
 
 
-<script src="/js/managePost.js"></script>
+<script src="/js/editPost.js"></script>
