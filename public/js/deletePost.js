@@ -16,9 +16,7 @@ const deletePostHandler = async (e) => {
     });
 
     if (res.ok) {
-      document.location.replace('/dashboard/');
-    } else {
-      alert(res.statusText);
+      document.location.replace('/dashboard');
     }
   }
 }
