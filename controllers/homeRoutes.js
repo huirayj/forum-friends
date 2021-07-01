@@ -3,6 +3,24 @@ const session = require('express-session');
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// renders user signup
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('signup');
+});
+
+// renders user login
+router.get('/', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
+});
+
 const getCurrentUser = async (id) => {
     const userData = await User.findByPk(id);
     const user = userData.get({ plain: true });
@@ -34,46 +52,6 @@ router.get('/posts', withAuth, async (req, res) => {
     const posts = postData.map(p => p.get({ plain: true }));
 
     res.render('posts', { posts, user, loggedIn: req.session.loggedIn });
-});
-
-// user signup
-router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-    res.render('signup');
-});
-
-// gets renders all posts
-router.get('/', async (req, res) => {
-    try {
-        const allPostData = await Post.findAll({
-            attributes: ['id', 'title', 'content', 'created_at'],
-            include: [
-                {
-                    model: Comment,
-                    attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
-                },
-                {
-                    model: User,
-                    attributes: ['username']
-                }
-            ]
-        })
-        const posts = allPostData.map(post => post.get({ plain: true }));
-
-        res.render('login', {
-            posts,
-            loggedIn: req.session.loggedIn
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
 });
 
 router.get('/posts', async (req, res) => {
