@@ -10,7 +10,7 @@ const getCurrentUser = async (id) => {
     return user;
 }
 
-// renders all posts by time posted
+// gets all posts
 router.get('/posts', withAuth, async (req, res) => {
     const user = await getCurrentUser(req.session.user_id);
     const postData = await Post.findAll({
@@ -36,7 +36,7 @@ router.get('/posts', withAuth, async (req, res) => {
     res.render('posts', { posts, user, loggedIn: req.session.loggedIn });
 });
 
-// user signup
+
 router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -45,7 +45,7 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-// gets renders all posts
+// gets all posts
 router.get('/', async (req, res) => {
     try {
         const allPostData = await Post.findAll({
@@ -67,15 +67,13 @@ router.get('/', async (req, res) => {
         })
         const posts = allPostData.map(post => post.get({ plain: true }));
 
-        res.render('login', {
-            posts,
-            loggedIn: req.session.loggedIn
-        });
+        res.render('login', { posts, loggedIn: req.session.loggedIn });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
+// gets all comments
 router.get('/posts', async (req, res) => {
     try {
         const allCommentData = await Comment.findAll({});

@@ -1,6 +1,12 @@
 module.exports = {
   format_time: date => {
-    return `${new Date(date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}  |  ${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(date).getFullYear()}
-      `;
+    const d = new Date(date);
+    const mm = d.getMonth() + 1;
+    const dd = d.getDate();
+    const yy = d.getFullYear();
+    const options = { hour: '2-digit', minute: '2-digit' };
+    const time = d.toLocaleTimeString([], options);
+
+    return `${time}  |  ${mm}/${dd}/${yy}`;
   }
 };

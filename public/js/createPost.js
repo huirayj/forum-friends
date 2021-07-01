@@ -17,8 +17,6 @@ const createPostHandler = async (e) => {
 
   if (res.ok) {
     document.location.replace('/posts');
-  } else {
-    alert(res.statusText);
   }
 }
 document.querySelector('.new-msg-form').addEventListener('submit', createPostHandler);

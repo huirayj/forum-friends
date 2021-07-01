@@ -22,8 +22,6 @@ const commentFormHandler = async (e) => {
 
       if (res.ok) {
         document.location.reload();
-      } else {
-        alert(res.statusText);
       }
     }
   }
