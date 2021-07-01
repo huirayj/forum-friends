@@ -28,7 +28,7 @@ const getCurrentUser = async (id) => {
     return user;
 }
 
-// renders all posts by time posted
+// gets all posts
 router.get('/posts', withAuth, async (req, res) => {
     const user = await getCurrentUser(req.session.user_id);
     const postData = await Post.findAll({
@@ -54,6 +54,7 @@ router.get('/posts', withAuth, async (req, res) => {
     res.render('posts', { posts, user, loggedIn: req.session.loggedIn });
 });
 
+// gets all comments
 router.get('/posts', async (req, res) => {
     try {
         const allCommentData = await Comment.findAll({});

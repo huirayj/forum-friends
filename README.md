@@ -12,7 +12,6 @@ Dotenv, Express, Express Handlebars & Express-Session Front-End: Materialize, Ha
 
 ![image_url](./public/images/preview1.gif "Site preview")
 
-
 ### Contributors
 
 * [[Joshua's Github - HTML-CSS-Framework Specialist]](https://github.com/Jdogcrane)
@@ -39,5 +38,9 @@ This program can be run through a browser using the above link to the the deploy
 * Ryan: Back end mainly Database handling sequelize related JavaScript
 * Joshua: Front end design handling styling, related JavaScript, and handlebar for Messenger, Dashboard  and Edit-Posts
 * Nathan: Front end design handling styling, related JavaScript, and handlebar for login
+
+## SignUp Preview
+
+![image_url](./public/images/forum-friends-demo.gif "Site preview")
 
 <h5 style="text-align: center;">Copyright © 2021</h5>
