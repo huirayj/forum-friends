@@ -8,5 +8,8 @@ module.exports = {
     const time = d.toLocaleTimeString([], options);
 
     return `${time}  |  ${mm}/${dd}/${yy}`;
+  },
+  format_plural: (num, word) => {
+    return (num !== 1) ? `${num} ${word}s` : `${num} ${word}`;
   }
 };

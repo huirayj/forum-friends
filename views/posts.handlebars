@@ -48,7 +48,8 @@
 
       <ul class="collapsible ">
         <li>
-          <div class="collapsible-header black"><i class="material-icons">chat_bubble</i>Comments</div>
+          <div class="collapsible-header black"><i class="material-icons">chat_bubble</i>{{ format_plural
+            post.comments.length "Comment" }}</div>
           {{#if post.comments.length}}
           {{#each post.comments as |comment|}}
           <div class="collapsible-body"><span class="left">{{ user.username }}:</span> <span
@@ -63,7 +64,7 @@
                 <div class="input-field col s12">
                   <textarea class="materialize-textarea comment-content"></textarea>
                   <label for="textarea1">Leave a comment</label>
-                  <button class="btn red waves-effect waves-light comment-btn" data-id={{post.id}} type="submit">Comment
+                  <button class="btn red waves-effect waves-light comment-btn" data-id={{post.id}} type="submit">{{format_plural post.comments.length 'Comment'}}
                     <i class="material-icons right">send</i>
                   </button>
                 </div>
