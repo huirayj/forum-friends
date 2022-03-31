@@ -21,13 +21,13 @@
 </div>
 
 
-<div class="container container1 center">
+<div class="container center">
   <div class="posts post-comments">
     {{#if posts.length}}
 
     {{#each posts as |post|}}
     {{!-- removed container here --}}
-    <div class="msg center">
+    <div class="msg">
       <p class="user center">
         {{ post.title }}
       </p>
@@ -53,7 +53,7 @@
           {{#if post.comments.length}}
           {{#each post.comments as |comment|}}
           <div class="collapsible-body"><span class="left">{{ user.username }}:</span> <span
-              class="left"></span><span>{{comment.content}}</span></div>
+              class="left"></span><span class="left">{{comment.content}}</span></div>
           {{/each}}
           {{else}}
           <div class="collapsible-body"><span>No comments yet</span></div>

@@ -6,11 +6,41 @@ body {
   opacity: 0;
   transition: opacity 1s;
 }
+.space-right {
+  margin-right: 5rem;
+}
+
+.sidenav li>a {
+  color: white;
+}
+
+.logo {
+  margin-left: 2rem;
+}
+
+.sidenav {
+  background-color: #0e0e0e;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+  display:unset !important;
+  
+  font-size: 24px;
+  height: 56px;
+  line-height: 56px;
+}
+
+.footer {
+  background: -webkit-linear-gradient(left, #222222, #000000);
+  height: 4rem;
+  padding-top: 0.5rem;
+  margin-top: 55vh;
+}
 
 .msg {
   border-radius: 0px;
   padding: 5px;
-  max-width: 598px;
+  
   border: 4px double transparent;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.397);
   background: -webkit-linear-gradient(left, #222222, #000000);
@@ -20,7 +50,7 @@ body {
 body {
   min-height: 100vh;
   flex-direction: column;
-  background: -webkit-linear-gradient(left, #3a9cf7, #b33e65);
+  background: rgb(32, 31, 31);
   font-family: 'Nunito', sans-serif;
 }
 
@@ -69,12 +99,13 @@ main {
 }
 
 .posts {
-  overflow-y: scroll;
-  max-height: 515px;
+  margin-bottom: 10rem;
   margin-top: 5px;
   border-radius: 5px;
 }
-
+.container {
+  max-width: 600px;
+}
 .container1 {
   max-width: 620px;
   background-color: rgba(61, 61, 61, 0.26);
@@ -82,7 +113,8 @@ main {
 
 ::-webkit-scrollbar {
   width: 16px;
-  border-left: 5px solid rgba(68, 68, 68, 0)
+  border-left: 5px solid rgba(68, 68, 68, 0);
+  background: rgb(52, 52, 52);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -95,15 +127,6 @@ main {
   /* Footer height */
 }
 
-#footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  min-height: 2.5rem;
-  /* Footer height */
-  padding: 12px;
-  z-index: 1;
-}
 
 .materialize-textarea {
   min-height: 100px !important;
@@ -131,7 +154,6 @@ html {
 }
 
 .comments {
-  max-width: 598px;
   background-color: rgb(19, 19, 19);
   border: solid rgb(32, 32, 32) 2px;
   background: -webkit-linear-gradient(right, #222222, #000000);
@@ -141,7 +163,7 @@ html {
   min-width: 101px;
   min-height: 36px;
   border: none;
-  border-radius: 2px;
+  border-radius: 1px;
   color: rgb(167, 167, 167);
 }
 
@@ -169,7 +191,7 @@ html {
 }
 
 .btn {
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .input-field {
@@ -227,6 +249,17 @@ html {
 @media only screen and (max-width: 480px) {
   #footer {
   display: none !important;
+  }
+  .container {
+    max-width: unset;
+  }
+
+  nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    display:unset !important;
+    margin-left: 0rem;
+    font-size: 24px;
+    height: 56px;
+    line-height: 56px;
   }
 
   .titleBig {

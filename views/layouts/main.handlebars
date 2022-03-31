@@ -22,27 +22,27 @@
       <!-- sticky nav bar -->
       <div class="navbar-fixed">
         <nav class="black">
-          <div class="container">
+          <div class="contain">
             <div class="nav-wrapper">
-              <a href="/" class="brand-logo short-text titleBig">Forum Friends</a>
+              <a href="/" class="logo"><i class="material-icons">group</i></a>
               <a data-target="mobile-nav" class="sidenav-trigger">
-                <i class="material-icons btn-floating white center-align pulse black-text ">menu</i>
+                <i class="material-icons black center-align white-text ">menu</i>
                 <ul class="right hide-on-med-and-down">
                   {{#if loggedIn}}
-                  <ul class="right hide-on-med-and-down">
+                  <ul class="right white-text hide-on-med-and-down">
                     {{#if user.username}}
                     <li>
                       <a>Welcome: {{ user.username }}</a>
                     </li>
                     {{/if}}
                     <li>
-                      <a href="/" class="logout">Logout</a>
+                      <a href="/" class="logout"><i class="material-icons">logout</i></a>
                     </li>
                     <li>
-                      <a href="/dashboard" id="dashboard">Dashboard</a>
+                      <a href="/dashboard" id="dashboard"><i class="material-icons">person</i></a>
                     </li>
                     <li>
-                      <a href="/posts" id="posts">Forums</a>
+                      <a href="/posts" id="posts"><i class="material-icons space-right">home</i></a>
                     </li>
                   </ul>
                   {{/if}}
@@ -55,21 +55,21 @@
 
       <!-- side nav -->
       {{#if loggedIn}}
-      <ul class="sidenav" id="mobile-nav">
+      <ul class="sidenav center" id="mobile-nav">
+       
+       
         <li>
-          <a>Welcome: {{ user.username }}</a>
+          <a href="/posts" id="posts"><i class="material-icons white-text">home</i></a>
         </li>
         <li>
-          <a href="/" class="logout">Logout</a>
+          <a href="/dashboard" id="dashboard"><i class="material-icons white-text">person</i></a>
         </li>
-        <li>
-          <a href="/dashboard" id="dashboard">Dashboard</a>
+         <li>
+          <a href="/" class="logout"><i class="material-icons white-text">logout</i></a>
         </li>
-        <li>
-          <a href="/posts" id="posts">Forums</a>
+         <li>
+          <a>Logged in as: {{ user.username }}</a>
         </li>
-        <p>Forum Friends &copy; 2021 | Made with materializeCSS | <a class="link"
-        href="https://github.com/huirayj/forum-friends">GitHub</a> </p>
       </ul>
       {{/if}}
       <!-- side nav -->
@@ -77,10 +77,11 @@
       <!-- footer -->
     </div>
   </div>
-  <footer id="footer" class="white-text center border">
-    <p>Forum Friends &copy; 2021 | Made with materializeCSS | <a class="link"
-        href="https://github.com/huirayj/forum-friends">GitHub</a> </p>
-  </footer>
+      <div class="footer center">
+      <p>Forum Friends &copy; 2021 | Made with materializeCSS | <a class="link"
+            href="https://github.com/huirayj/forum-friends">GitHub</a> </p>
+
+      </div>
 </body>
 <!-- footer -->
 
